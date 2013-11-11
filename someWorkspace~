@@ -1,3 +1,5 @@
+'aClass' class selectors allSatisfy: [ :each | #(#bla #size) includes: each ].
+
 "Test to the Interface"
 
 i := Interface new.
@@ -6,18 +8,9 @@ i selectors: #(#method #method: #methodA #methodA: #methodB:with:).
 exI := ExampleInterface new.
 
 i isCompliant: ExampleInterface.
-i query: exl. 
+i query: exl.
 i isUnderstoodBy: exl.
 i addNeededStubsIn: ExampleInterface.
-
-
-y := Interface new.
-y selectors: #(#bla #ble #method #methodC).
-
-y isCompliant: ExampleInterface.
-y query: exl.
-y isUnderstoodBy: exl.
-y addNeededStubsIn: ExampleInterface.
 
 
 "Test to the Delegator"
@@ -36,7 +29,6 @@ exs perform: #nah: with: 2.
 
 del := IVDelegator on: ex.
 del sendMessage: #nah: with: 2.
-del sendMessage: #ble.  
-del sendMessage: #ble withArguments: #().
+del sendMessage: #bli. 
+del sendMessage: #bli withArguments: #().
 del sendMessage: #nah: withArguments: #(2).
-
